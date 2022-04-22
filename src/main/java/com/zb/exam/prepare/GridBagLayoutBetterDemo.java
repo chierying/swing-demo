@@ -10,7 +10,7 @@ import static java.awt.GridBagConstraints.*;
 public class GridBagLayoutBetterDemo {
 
     public static void main(String[] args) {
-        JFrame frame = new JFrame("测试窗口");
+        final JFrame frame = new JFrame("测试窗口");
 
         GridBagLayout gridBagLayout = new GridBagLayout();    // 布局管理器
         frame.setLayout(gridBagLayout);
@@ -66,6 +66,8 @@ public class GridBagLayoutBetterDemo {
             public void actionPerformed(ActionEvent e) {
                 if (e.getSource() == bt2) {
                     tf3.setText(null);
+                    frame.setVisible(false);
+                    frame.dispose();
                 }
             }
         });
